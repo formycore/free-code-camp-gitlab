@@ -54,6 +54,7 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         run: |
           aws --version
+          echo "Bucket variable is: $AWS_S3_BUCKET"
           aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete  
 
 
