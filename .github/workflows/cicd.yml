@@ -39,7 +39,7 @@ jobs:
     needs: build
     container:
       image: amazon/aws-cli:2.28.22
-      options: "--entrypoint.sh"
+      options: --entrypoint sh
     steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
