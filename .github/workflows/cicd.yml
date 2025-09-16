@@ -34,4 +34,13 @@ jobs:
           serve -s build -l 3000 &
           sleep 10
           curl -f http://localhost:3000 | grep -i "react app"
+      - name: Deploy to s3
+        image: amazon/aws-cli:2.28.22
+        entrypoint: [""]
+        run: |
+          aws version
+          echo "hello s3" > demo.txt
+          aws s3 sync build/ s3://bucket1609san/ --delete
+          
+
           
