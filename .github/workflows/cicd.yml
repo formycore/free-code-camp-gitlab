@@ -27,4 +27,11 @@ jobs:
 # But your build command (yarn build) creates the build/ folder, not website/.
           name: build
           path: build
-
+      - name: Test website
+        run: |
+          yarn global add serve
+          apk add --no-cache curl
+          serve -s build -l 3000 &
+          sleep 10
+          curl -f http://localhost:3000 | grep -i "react app"
+          
