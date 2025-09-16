@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to s3
         uses: docker://amazon/aws-cli:2.28.22
         with:
-          entrypoint: ""
+          entrypoint: [""]
         run: |
           aws version
           echo "hello s3" > demo.txt
