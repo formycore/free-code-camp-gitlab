@@ -42,7 +42,7 @@ jobs:
       options: "--entrypoint.sh"
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build
           path: build
